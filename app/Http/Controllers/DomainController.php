@@ -40,6 +40,35 @@ class DomainController extends Controller
         return view('template.member.domains.list', compact('domains', 'search', 'sortBy', 'sortOrder','listedcount','holdcount'));
     }
 
+    public function FrontIndex(Request $request)
+    {
+
+    $sortBy = $request->input('sortBy', 'id'); // Default column to sort by
+    $sortOrder = $request->input('sortOrder', 'desc'); // Default sort order
+
+    // Get search query
+    $search = $request->input('search');
+
+    // Query domains with sorting, search, and pagination
+    $domains = Domain::when($search, function ($query, $search) {
+        return $query->where('name', 'like', "%{$search}%");
+    })
+    ->where('status', 'Listed')
+    ->orderBy($sortBy, $sortOrder)
+    ->paginate(10)
+    ->appends([
+        'search' => $search,
+        'sortBy' => $sortBy,
+        'sortOrder' => $sortOrder,
+    ]);
+
+    $listedcount = Domain::where('status', 'Listed')->count();
+    $holdcount = Domain::where('status', 'On Hold')->count();
+
+
+        // Pass search term and paginated data to the view
+        return view('template.site.index', compact('domains', 'search', 'sortBy', 'sortOrder','listedcount','holdcount'));
+    }
     public function create()
     {
         return view('template.member.domains.create');

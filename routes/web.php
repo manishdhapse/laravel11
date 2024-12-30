@@ -8,6 +8,10 @@ use App\Http\Controllers\DomainController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/auction ', [DomainController::class, 'FrontIndex'])->name('auction'); // List domains
+
+
 //Route::view('about', 'about');
 Route::view('home', 'home');
 Route::view('adminlog', 'template.login.login');
