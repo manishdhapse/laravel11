@@ -17,12 +17,12 @@
 
 
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Expand at xl</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+    {{-- <a class="navbar-brand" href="#">Expand at xl</a> --}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExample06">
+    <div class="collapse navbar-collapse" id="sidebarMenu">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -42,8 +42,6 @@
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-md-0">
-        <input class="form-control" type="text" placeholder="Search">
-      </form>
+
     </div>
   </nav>

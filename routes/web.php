@@ -6,7 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\DomainController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('about');
 });
 
 Route::get('/auction ', [DomainController::class, 'FrontIndex'])->name('auction'); // List domains

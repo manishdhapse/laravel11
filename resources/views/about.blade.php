@@ -1,3 +1,5 @@
+@extends('template.site.layout.layout')
+@section('app')
 
         <div className='container-fluid mt-3'>
             <h3>About Navbar Example</h3>
@@ -6,3 +8,4 @@
           </div>
 
 
+@endsection
